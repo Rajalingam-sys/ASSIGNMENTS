@@ -1,8 +1,0 @@
-
-function sortDescending(arr) {
-    return arr.sort((a, b) => b - a);
-}
-const input = prompt("Enter numbers separated by commas:");
-const inputArray = input.split(',').map(Number);
-const sortedArray = sortDescending(inputArray);
-console.log("Sorted array in descending order:", sortedArray);
