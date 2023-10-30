@@ -1,21 +1,27 @@
 import java.util.Random;
 
-public class ShuffleArray {
-    public static void shuffleArray(int[] arr) {
-        Random rand = new Random();
-        for (int i = arr.length - 1; i > 0; i--) {
-            int j = rand.nextInt(i + 1);
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+public class ArrayShuffler {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5, 6, 7};
+        shuffleArray(array);
+
+        for (int value : array) {
+            System.out.print(value + " ");
         }
     }
 
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7};
-        shuffleArray(arr);
-        for (int num : arr) {
-            System.out.print(num + " ");
+    // Custom shuffle method (without shuffle algorithm or collections)
+    public static void shuffleArray(int[] array) {
+        Random random = new Random();
+        int n = array.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int j = i + random.nextInt(n - i); // Generate a random index between i and n-1
+
+            // Swap elements at i and j
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
     }
 }
